@@ -1,0 +1,10 @@
+version: '3'
+services:
+  shop-project:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: shop-project
+    container_name: shop-project
+    ports:
+      - "80:80"
