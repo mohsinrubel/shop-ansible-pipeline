@@ -1,0 +1,12 @@
+---
+- hosts: all
+  user: server1
+
+  tasks:
+    - name:  build and deploy code 
+      command: sudo docker compose up -d --build
+      args:
+        chdir: /home/server1/project/shop-ansible-pipeline
+
+
+
