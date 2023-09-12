@@ -1,0 +1,28 @@
+---
+- hosts: all
+  user: server1
+
+  tasks:
+    - name:  git  reset 
+      command: sudo git reset .
+      args:
+        chdir: /home/server1/project/shop-ansible-pipeline
+
+
+    - name: git clean
+      command: sudo git clean -df
+      args:
+        chdir: /home/server1/project/shop-ansible-pipeline
+
+    - name: git stash
+      command: sudo git stash
+      args:
+        chdir: /home/server1/project/shop-ansible-pipeline
+    
+    - name: git update code
+      command: sudo git pull
+      args:
+        chdir: /home/server1/project/shop-ansible-pipeline
+
+
+
